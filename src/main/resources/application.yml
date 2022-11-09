@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    password: password
+    url: jdbc:postgresql://localhost:5432/marketplace
+    username: makorinaphtali
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+mpesa:
+  daraja:
+    consumer-key: cNYLC32CPEhalzZUVAzBDs3i0Vfgpf9c
+    consumer-secret: xnRgHJ2v7VhkZq5k
+    grant-type: client_credentials
+    oauth-endpoint: https://sandbox.safaricom.co.ke/oauth/v1/generate
+    register-url-endpoint: https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl
+    simulate-transaction-endpoint: https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate
+    shortCode: 600998
+    confirmationURL: http://e1e0-197-237-0-64.ngrok.io/mobile-money/confirmation
+    validationURL: http://e1e0-197-237-0-64.ngrok.io/mobile-money/validation
+    responseType: Completed
+    stkPassKey: bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919
+    stkPushShortCode: 174379
+    stkPushRequestUrl: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+    stkPushRequestCallbackUrl: http://e1e0-197-237-0-64.ngrok.io/mobile-money/stk-transaction-result
